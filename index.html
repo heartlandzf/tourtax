@@ -49,8 +49,8 @@
             <tr>
                 <th>Description</th>
                 <th>Daily Tax (€)</th>
-                <th>Number of Days</th>
-                <th>Number of People</th>
+                <th>Days</th>
+                <th>People</th>
                 <th>Subtotal (€)</th>
             </tr>
         </thead>
@@ -114,9 +114,11 @@
             const descriptionCell = newRow.insertCell();
             const dailyTaxCell = newRow.insertCell();
             const daysCell = newRow.insertCell();
+            const peopleCell = newRow.insertCell();
+
             const subtotalCell = newRow.insertCell();
 
-            descriptionCell.textContent = `Accommodation ${rowCount}`;
+            descriptionCell.textContent = `Tax ${rowCount}`;
 
             dailyTaxCell.innerHTML = `<input type="number" id="daily-tax-${rowCount}" value="0" min="0" step="0.1" onchange="calculateRow(${rowCount})">`;
             daysCell.innerHTML = `<input type="number" id="days-${rowCount}" value="0" min="0" onchange="calculateRow(${rowCount})">`;
