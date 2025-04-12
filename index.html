@@ -47,8 +47,8 @@
     <table>
         <thead>
             <tr>
-                <th>Description</th>
-                <th>Daily Tax (€)</th>
+                <th>Desc</th>
+                <th>Daily (€)</th>
                 <th>Days</th>
                 <th>People</th>
                 <th>Subtotal (€)</th>
@@ -57,16 +57,16 @@
         <tbody id="tax-items">
             <tr>
                 <td>Tax 1</td>
-                <td><input type="number" id="daily-tax-1" value="3.50" min="0" step="0.1"></td>
-                <td><input type="number" id="days-1" value="0" min="0"></td>
-                <td><input type="number" id="people-1" value="0" min="0"></td>
+                <td><input type="number" id="daily-tax-1" value="3.50" min="0" step="0.10" max="100"></td>
+                <td><input type="number" id="days-1" value="0" min="0" max="4"></td>
+                <td><input type="number" id="people-1" value="0" min="0" max="100"></td>
                 <td id="subtotal-1">0.00</td>
             </tr>
             <tr>
                 <td>Tax 2</td>
-                <td><input type="number" id="daily-tax-2" value="2.80" min="0" step="0.1"></td>
-                <td><input type="number" id="days-2" value="0" min="0"></td>
-                <td><input type="number" id="people-2" value="0" min="0"></td>
+                <td><input type="number" id="daily-tax-2" value="2.80" min="0" step="0.10" max="100"></td>
+                <td><input type="number" id="days-2" value="0" min="0" max="4"></td>
+                <td><input type="number" id="people-2" value="0" min="0" max="100"></td>
                 <td id="subtotal-2">0.00</td>
             </tr>
             </tbody>
@@ -120,9 +120,9 @@
 
             descriptionCell.textContent = `Tax ${rowCount}`;
 
-            dailyTaxCell.innerHTML = `<input type="number" id="daily-tax-${rowCount}" value="0" min="0" step="0.1" onchange="calculateRow(${rowCount})">`;
-            daysCell.innerHTML = `<input type="number" id="days-${rowCount}" value="0" min="0" onchange="calculateRow(${rowCount})">`;
-            peopleCell.innerHTML = `<input type="number" id="people-${rowCount}" value="0" min="0" onchange="calculateRow(${rowCount})">`;
+            dailyTaxCell.innerHTML = `<input type="number" id="daily-tax-${rowCount}" value="0" min="0" step="0.1" max="100" onchange="calculateRow(${rowCount})">`;
+            daysCell.innerHTML = `<input type="number" id="days-${rowCount}" value="0" min="0" max="100" onchange="calculateRow(${rowCount})">`;
+            peopleCell.innerHTML = `<input type="number" id="people-${rowCount}" value="0" min="0" max="100" onchange="calculateRow(${rowCount})">`;
             subtotalCell.id = `subtotal-${rowCount}`;
             subtotalCell.textContent = "0.00";
 
